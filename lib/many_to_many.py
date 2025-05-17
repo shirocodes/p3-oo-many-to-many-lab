@@ -55,20 +55,3 @@ class Contract:
     def contracts_by_date(cls, date):
         return [contract for contract in cls.all if contract.date == date]
 
-# Create Author and Book instances
-author1 = Author("J.K. Rowling")
-book1 = Book("Harry Potter")
-book2 = Book("Fantastic Beasts")
-
-# Sign contracts
-author1.sign_contract(book1, "2025-05-17", 15)
-author1.sign_contract(book2, "2025-05-17", 10)
-
-# Access contracts and books
-print(author1.contracts())  # List of Contract objects
-print(author1.books())      # List of Book objects
-print(author1.total_royalties())  # Total royalties: 25
-
-# Find contracts by date
-contracts_today = Contract.contracts_by_date("2025-05-17")
-print(contracts_today)  # List of Contract objects signed today
